@@ -25,5 +25,5 @@ Authentication: JWT (JSON Web Tokens)
 ##  Run the Frontend Server
 #### npm run dev
 
-<!-- ## Screenshot
-![alt text](image.png) -->
+## Screenshot
+![alt text](image.png)
