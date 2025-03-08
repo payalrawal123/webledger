@@ -1,12 +1,21 @@
 const express = require("express");
+const cors = require("cors");
 const {  connectionToDb } = require("./config/db.config");
+const { userRouter } = require("./routes/userRouter");
+const { recipeRouter } = require("./routes/recipeRouter");
 
 const app = express();
 const port = 5000;
-app.get("/",(req,res)=>{
-    console.log("getting item");
-    
-})
+app.use(express.json());
+app.use(cors());
+app.get("/", (req, res) => {
+  res.send("get start run server");
+});
+
+
+
+app.use("/user",userRouter);
+app.use("/recipe",recipeRouter);
 
 app.listen(port , async(req,res)=>{
     await connectionToDb();
